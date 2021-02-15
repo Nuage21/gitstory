@@ -1,24 +1,7 @@
-.repo-input-container{
-    position: fixed;
-    top: 40%;
-    left: 48%;
-    transform: translate(-50%, -50%);
-}
-
-.input-holder{
-    width:max-content;
-}
-
-.page-container{
-    position: relative;
-    min-height: 94vh;
-    max-height: 94vh;
-}
-
 #inp-repo-url{
     float: left;
     height: 44px;
-    width: 500px;
+    width: 100%;
     border: groove 1px #913BA7;
     padding-left: 20px;
     font-family: 'Montserrat';
@@ -44,7 +27,7 @@
 }
 
 #btn-submit-url:hover{
-    transition: background-color .6s ease;
+    transition: background-color .3s ease;
     background-color: #FF8A00;
 }
 
