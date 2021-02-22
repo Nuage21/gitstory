@@ -19,3 +19,30 @@ export function isGithubUrl(str) {
 
   return pattern1.test(str) || pattern2.test(str) || pattern3.test(str);
 }
+
+export function doesRepoExist(repo, _callback)
+{
+
+    repo = (repo.charAt(repo.length - 1) == '/')?repo:repo+'/'; // add / at the end
+    let splitted = repo.split('/');
+    let lng = splitted.length;
+    let repo_name = splitted[lng - 2], owner = splitted[lng - 3];
+        
+    let GETUrl = "https://api.github.com/repos/" + owner + "/" + repo_name + '/branches';
+
+    // console.log(GETUrl) // debug
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.addEventListener('load', () => {
+      let status = -1; // don't know (timeout)
+      if(xhr.status == 404)
+        status = 0;
+      if(xhr.status == 200)
+        status = 1; // exists
+      _callback(status);
+    });
+
+    xhr.open('GET', GETUrl);
+    xhr.send();
+}

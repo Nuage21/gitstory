@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {isGithubUrl} from './gh.js';
+import {doesRepoExist} from './gh.js';
+
 
 class HomePage extends React.Component {
 
@@ -20,8 +22,17 @@ class HomePage extends React.Component {
       alert('not github');
     }
     else {
-      alert('yes');
-      // send GET request to gh-api and check existence
+      let _callback = (status) =>{
+        if(status > 0)
+          console.log('EXISTS');
+        else if(status < 0)
+          console.log("don't know");
+        else
+          console.log('DOESNT EXIST');
+      };
+
+      let status = doesRepoExist(this.state.repo, _callback);
+       
     }
   };
 
