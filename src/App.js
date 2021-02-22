@@ -24,7 +24,7 @@ class App extends React.Component{
         if(this.state.weOnHomepage == false)
             whatToWhow = <MainApp />;
         return (
-            <div>
+            <div style={{height: "100%", width: "100%"}}>
                 {whatToWhow}           
             </div>
         );

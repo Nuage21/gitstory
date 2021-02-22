@@ -11,14 +11,14 @@ class MainApp extends React.Component{
     {
         return (
             <div id="mainapp-container">
-                <div id="filexp-container">
-                    <h1>File Explorer Here </h1>
-                </div>
-                <div id="code-editor-container">
-                    <h1>Code Editor Here </h1>
+                <div id="top-container">
+                    <div id="filexp-container">
+                        filexo
+                    </div>
+                    <div id="code-editor-container">
+                    </div>
                 </div>
                 <div id="git-graph-container">
-                    <h1>Git Graph Here </h1>
                 </div>
             </div>
         );
