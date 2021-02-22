@@ -24,7 +24,10 @@ class HomePage extends React.Component {
     else {
       let _callback = (status) =>{
         if(status > 0)
-          console.log('EXISTS');
+          {
+            // show success message / load first commit tree-branches-... then show main app
+            this.props.runApp();
+          }
         else if(status < 0)
           console.log("don't know");
         else
@@ -78,7 +81,7 @@ class HomePage extends React.Component {
       </div>
         <footer class="footer-container">
           <hr id="footer-hr" />
-            <span class="footer-txt"> aak mlh team © 2021 | </span>
+            <span class="footer-txt"> Alex-Hakim-Abir mlh team © 2021 | </span>
             <i class="fa fa-github" id="gh-icon"></i>
             <a href="https://github.com/Nuage21/gitstory" id="gh-link"> gitStory on Github! </a>
         </footer>

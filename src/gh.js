@@ -18,7 +18,7 @@ export function isGithubUrl(str) {
     '([a-zA-Z0-9_-]+)/*$', 'i'); // repo name
 
   return pattern1.test(str) || pattern2.test(str) || pattern3.test(str);
-}
+};
 
 export function doesRepoExist(repo, _callback)
 {
