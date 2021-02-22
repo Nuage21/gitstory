@@ -1,12 +1,16 @@
 import React from 'react';
 import HomePage from './homepage'
+import MainApp from './MainApp'
 
 class App extends React.Component{
     constructor(props){
         super(constructor);
         this.runApp = this.runApp.bind(this);
+
+        let workingOnMainApp = true; // set this to false if you implementing smth on index page
+
         this.state = {
-            weOnHomepage: true,
+            weOnHomepage: !workingOnMainApp,
         };
     }
 
@@ -18,7 +22,7 @@ class App extends React.Component{
     render(){
         let whatToWhow = <HomePage runApp={this.runApp} />;
         if(this.state.weOnHomepage == false)
-            whatToWhow = <h1> Hello On the Main App </h1>;
+            whatToWhow = <MainApp />;
         return (
             <div>
                 {whatToWhow}           
